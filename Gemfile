@@ -33,7 +33,18 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'fuubar'
+  gem 'guard-rspec', require: false
+  gem 'guard-livereload'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'spring'
+  gem "spring-commands-rspec"
 end
 
 # Use ActiveModel has_secure_password
