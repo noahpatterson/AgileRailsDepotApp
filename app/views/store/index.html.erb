@@ -5,6 +5,9 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+<% if @count >= 5 %>
+  <h2>You've visited <%= @count %> <%= 'time'.pluralize %> </h2>
+<% end %>
 <% cache('test') do %>
   <% @products.each do |product| %>
     <% cache(product) do %>
@@ -18,6 +21,7 @@
           <span class="price">
             <%= number_to_currency(product.price) %>
           </span>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
         </div>
       </div>
     <% end %>
